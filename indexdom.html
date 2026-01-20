@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<!--งานอดิเรก:
+<input type="checkbox" name="hobby" value="reading"> Reading
+<input type="checkbox" name="hobby" value="traveling"> Traveling
+<input type="checkbox" name="hobby" value="gaming"> Gaming
+*/
+    <script>
+        let checkboxesInput = document.querySelectorAll('input[name="hobby"]');
+        for (let i=0; i<checkboxesInput.length; i++) {
+            console.log(checkboxesInput[i].value);
+        }
+    button onclick ="uerClick()">คลิก !!</button>
+    <script>
+        function uerClick() {
+            console.log("User clicked the button!");
+        }
+        function devClicked(){
+            console.log("User clicked the div!")
+        }
+    </script>
+</body>
+</html> -->
+<input type="radio" name="gender" value="male" onchange="changeGender()"checked="true">Male
+<input type="radio" name="gender" value="female" onchange="changeGender()">Female
+    <script>
+        function changeGender() {
+            //เลือก gender ทุกinput ออกมา
+            let genderInputs = document.querySelectorAll('input[name="gender"]');
+            //ใคร checked อยู๋บ้าง = เพศโดนเลือกอยู่
+            for (let i= 0; i<genderInputs.length; i++) {
+                if (genderInputs[i].checked) {
+                    console.log("Selected gender: " + genderInputs[i].value);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -83,9 +83,9 @@
         <div class="form-input">
             <span class="header-form">งานอดิเรก</span>
             <div class="flex option-group">
-                <label><input name="interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ</label>
-                <label><input name="interest" type="checkbox" value="ดูหนัง"> ดูหนัง</label>
-                <label><input name="interest" type="checkbox" value="ฟังเพลง"> ฟังเพลง</label>
+                <label><input name="interests" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ</label>
+                <label><input name="interests" type="checkbox" value="ดูหนัง"> ดูหนัง</label>
+                <label><input name="interests" type="checkbox" value="ฟังเพลง"> ฟังเพลง</label>
             </div>
         </div>
 
@@ -93,12 +93,12 @@
             <span class="header-form">แนะนำตัวเอง</span>
             <textarea name="description" placeholder="บอกเล่าความเป็นตัวคุณ..."></textarea>
         </div>
-
+        <div id="message"class="message"></div>
         <div class="center">
             <button onclick="submitData()" class="button">ยืนยันการสมัคร</button>
         </div>
     </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
     <script>
         
         function submitData() {

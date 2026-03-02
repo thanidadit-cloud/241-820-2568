@@ -1,27 +1,40 @@
-function submitData() {
-    
-    let firstName = document.querySelector('input[name="firstname"]').value;
-    let lastName = document.querySelector('input[name="lastname"]').value;
-    let age = document.querySelector('input[name="age"]').value;
+const submitData = async () => {
+    let firstnameDOM = document.querySelector('input[name=firstname]');
+    let lastnameDOM = document.querySelector('input[name=lastname]');
+    let ageDOM = document.querySelector('input[name=age]');
+    let genderDOM = document.querySelector('input[name=gender]:checked');
+    let interestDOMs = document.querySelectorAll('input[name=interests]:checked');
+    let descriptionDOM = document.querySelector('textarea[name=description]');
+    let messageDOM = document.getElementById('message')
 
-  
-    let genderDom = document.querySelector('input[name="gender"]:checked');
-    
-    
-    let interestDom = document.querySelectorAll('input[name="interest"]:checked');
-    let interests = [];
-    interestDom.forEach(item => interests.push(item.value));
+    try{
+        let interest =''
+        for (let i = 0 ; i < interestDOMs.length; i++) {
+            interest += interestDOMs[i].value
+            if (i != interestDOMs.length - 1){
+            interest += ','
+        }
+    }
 
-    let description = document.querySelector('textarea[name="description"]').value;
-
-    let uerData = {
-        firstName: firstName,
-        lastName: lastName,
-        age: age, 
-        gender: genderDom ? genderDom.value : "ไม่ระบุ",
-        interests: interests,
-        description: description
+    let userData ={
+        Firstname: firstnameDOM.value,
+        Lastname: lastnameDOM.value,
+        Age: ageDOM.value,
+        Gender: genderDOM ? genderDOM.value:'lop;i988i9',
+        Description: descriptionDOM.value,
+        Interests: interest
     };
+        console.log('submitData',userData);
+        const response = await axios.post('http://localhost:8000/users',userData);
 
-    console.log('submitted Data:', uerData);
-}
+        console.log('response',response);
+        messageDOM.innerText = 'บันทึกข้อมูลสำเร็จ'
+        messageDOM.className = 'message success'
+
+    }catch(error){
+        console.error('Error:',error)
+        
+        messageDOM.innerText = 'เกิดข้อผิดพลาด'
+        messageDOM.className = 'message danger'
+    }
+};

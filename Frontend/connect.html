@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <script>
-        fetch('http://localhost:8830/users')
-        .then(response => {
-            return response.json()
+        fetch('htp://localhost:8000/users')
+        .then(Response => {
+            return Response.json()
         })
-        .then((responseData) =>{
-            console.log('Response:',responseData)
+        .then((ResponseData) => {
+            console.log('Response:',ResponseData)
         })
     </script>
 </body>

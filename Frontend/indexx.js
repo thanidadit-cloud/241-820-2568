@@ -110,6 +110,7 @@ const submitData = async () => {
                   errors: errors
               }
           }
+<<<<<<< HEAD
           let message = 'บันทุกข้อมูลสำเร็จ';
 
           if (mode == 'CREATE') {
@@ -125,6 +126,10 @@ const submitData = async () => {
 
 
         const response = await axios.post(`${BASE_URL}/users`, userData);
+=======
+
+        const response = await axios.post('http://localhost:8000/users', userData);
+>>>>>>> 8945ee85f4154d5ad6857508a9187181622ec6fe
         console.log('response', response);
         messageDOM.innerText = 'บันทึกข้อมูลสำเร็จ';
         messageDOM.className = 'message success';

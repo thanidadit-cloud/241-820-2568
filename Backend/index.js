@@ -18,7 +18,11 @@ const initMySQL = async () => {
         user: 'root',
         password: 'root',
         database: 'webdb',
+<<<<<<< HEAD
         port: 8821
+=======
+        port: 8820
+>>>>>>> 8945ee85f4154d5ad6857508a9187181622ec6fe
     });
 }
 
